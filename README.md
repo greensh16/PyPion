@@ -2,7 +2,7 @@
 Created - 26|08|2019,
 Modified - 30|06|2022
 
-Welcome to the Python Library that does post-processing on the .Silo simulation data files outputted from [PION]((https://www.pion.ie)). The library works with nested-grid, uniform-grid, 2D, and 3D Silo files.
+Welcome to the Python Library that does post-processing on the .Silo simulation data files outputted from PION, [https://www.pion.ie](https://www.pion.ie). The library works with nested-grid, uniform-grid, 2D, and 3D Silo files.
 
 The relevant files can be found in src/pypion. You can use PlotData.py as a test script, it can call a 2D and a 3D function from PlottingClasses.py. See comments insted the python script on how to use it and change for your needs.
 
