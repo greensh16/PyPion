@@ -51,16 +51,6 @@ class OpenData:
         header = self.db.GetToc()
         return header
 
-    # To close all the variables after use.
-    def close(self):
-        self.db.Close()
-        self.OpenFile = ""
-
-    # Returns the header information:
-    def header_info(self):
-        header = self.db.GetToc()
-        return header
-
     # Xmax variable contains the max value for each axis of the grid, for each level
     def xmax_all(self):
       l = self.nlevels()
