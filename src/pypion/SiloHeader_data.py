@@ -51,6 +51,24 @@ class OpenData:
         header = self.db.GetToc()
         return header
 
+    # Xmax variable contains the max value for each axis of the grid, for each level
+    def xmax_all(self):
+      l = self.nlevels()
+      xmax = [[None]] * l
+      for i in range(l):
+        self.open(i)
+        xmax[i] = self.level_max()
+      return xmax
+
+    # Xmin variable contains the min value for every axis of the grid.
+    def xmin_all(self):
+      l = self.nlevels()
+      xmin = [[None]] * l
+      for i in range(l):
+        self.open(i)
+        xmin[i] = self.level_min()
+      return xmin
+
     # Xmax variable contains the max value for every axis of the grid.
     def xmax(self):
         self.db.SetDir('/header')
