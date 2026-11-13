@@ -1,8 +1,5 @@
 [build-system]
-requires = [
-    "setuptools>=42",
-    "wheel"
-]
+requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -10,22 +7,35 @@ name = "pypion"
 version = "1.1.2"
 description = "Python package to open Silo data files from PION"
 readme = "README.md"
-license = { file = "LICENSE.md" }
-authors = [{ name = "Sam Green", email = "green@cp.dias.ie" }]
-classifiers = [
-    'Programming Language :: Python :: 3',
-    'License :: OSI Approved :: MIT License',
-    'Operating System :: OS Independent' ]
-keywords = [ 'pypion', 'visualisation', 'computational fluid dynamics']
-dependencies = [
-    "numpy >= 2.0.0",
-    "astropy >= 7.0.0",
-    "yt >= 4.4.0"
+license = "BSD-3-Clause"
+license-files = ["LICENSE.md"]
+authors = [
+    { name = "Sam Green", email = "green@cp.dias.ie" },
+    { name = "Jonathan Mackey" },
+    { name = "Arun Mathew" },
 ]
-requires-python = ">=3.6"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Astronomy",
+]
+keywords = ["pypion", "pion", "silo", "visualisation", "computational fluid dynamics"]
+requires-python = ">=3.9"
+dependencies = [
+    "numpy",
+    "astropy",
+    "matplotlib",
+]
+
+[project.optional-dependencies]
+# needed only for pion2yt.py, derived_fields_yt.py and example_plots_yt.py
+yt = ["yt >= 4.4.0"]
 
 [project.urls]
 Homepage = "https://github.com/greensh16/PyPion"
+Documentation = "https://pion-docs-dev.readthedocs.io/en/latest/python.html"
+Issues = "https://github.com/greensh16/PyPion/issues"
 
-
-
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["pypion*"]
